@@ -17,4 +17,16 @@ public class Main {
 		}
 		return smallest;
 	}
+	
+	// Return the largest number in an integer array
+	public static int getLargest(int[] array) {
+		if (array.length == 0)
+			throw new IllegalArgumentException("You passed an empty array.");
+		
+		int largest = array[0];
+		for(int i = 1; i < array.length; i++) {
+			largest = Math.min(largest, array[i]);
+		}
+		return largest;
+	}
 }
