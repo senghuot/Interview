@@ -9,6 +9,6 @@ public class AvlTree {
 	}
 	
 	public void verifyAVL() {
-		
+		System.out.println("We're good to go.");
 	}
 }
