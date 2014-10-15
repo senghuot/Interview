@@ -5,10 +5,10 @@ package avlTree;
  * height use as part of rotation.
  */
 public class AvlNode {
-	private int key;
-	private AvlNode left;
-	private AvlNode right;
-	private int height;
+	public int key;
+	public int height;
+	public AvlNode left;
+	public AvlNode right;
 	
 	public AvlNode(int key) {
 		this(key, null, null);
