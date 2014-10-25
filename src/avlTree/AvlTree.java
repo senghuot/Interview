@@ -1,7 +1,5 @@
 package avlTree;
 
-import sun.org.mozilla.javascript.Node;
-
 public class AvlTree {
 
 	AvlNode root;
