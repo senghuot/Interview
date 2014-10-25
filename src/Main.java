@@ -2,8 +2,8 @@ public class Main {
 	
 	// Starting out easy
 	public static void main(String[] args) {
-		int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -1};
-		System.out.println(getSmallest(array));
+		String word = "Haealo";
+		System.out.println(isUnique(word));
 	}
 	
 	// Return the smallest number in an integer array
@@ -29,4 +29,19 @@ public class Main {
 		}
 		return largest;
 	}
+	
+	// unique character in String
+	public static boolean isUnique(String word) {
+		int[] chars = new int[256];
+		for(int i = 0; i < word.length(); i++) {
+			int index = word.charAt(i);
+			chars[index]++;
+			if(chars[index] > 1)
+				return false;
+		}
+		
+		return true;
+	}
+	
+	
 }
