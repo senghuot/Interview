@@ -1,5 +1,8 @@
 package LinkedList;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedList {
 	
 	private Node root;
@@ -45,5 +48,24 @@ public class LinkedList {
 			res.append(", " + tmp.data);
 		}
 		return res.toString();
+	}
+	
+	public void removeDuplicate() {
+		
+		Node curr = root;
+		Node next;
+		Set<Integer> mem = new HashSet<Integer>();
+		while(curr.next != null) {
+			next = curr.next;
+			
+			// deleting the last node
+			if(mem.contains(curr.data))
+				curr.data = next.data;
+			else
+				curr = curr.next;
+			mem.add(next.data);	
+		}
+		if(mem.contains(curr.data))
+			curr = null;
 	}
 }
