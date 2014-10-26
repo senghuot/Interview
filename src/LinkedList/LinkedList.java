@@ -51,21 +51,27 @@ public class LinkedList {
 	}
 	
 	public void removeDuplicate() {
-		
+      // too short
+		if(root == null || root.next == null)
+         return;
+      
 		Node curr = root;
 		Node next;
 		Set<Integer> mem = new HashSet<Integer>();
-		while(curr.next != null) {
+		while(curr.next.next != null) {
 			next = curr.next;
 			
-			// deleting the last node
-			if(mem.contains(curr.data))
+			// deleting the current node
+			if(mem.contains(curr.data)) {   
 				curr.data = next.data;
-			else
+            curr.next = next.next;
+         } else {
+            mem.add(curr.data);
 				curr = curr.next;
-			mem.add(next.data);	
+         }
 		}
-		if(mem.contains(curr.data))
-			curr = null;
+      mem.add(curr.data);
+		if(mem.contains(curr.next.data))
+	      curr.next = null;
 	}
 }
