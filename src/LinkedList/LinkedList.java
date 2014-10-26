@@ -51,7 +51,7 @@ public class LinkedList {
 	}
 	
 	public void removeDuplicate() {
-      // too short
+		// too short
 		if(root == null || root.next == null)
          return;
       
@@ -64,14 +64,14 @@ public class LinkedList {
 			// deleting the current node
 			if(mem.contains(curr.data)) {   
 				curr.data = next.data;
-            curr.next = next.next;
-         } else {
-            mem.add(curr.data);
+				curr.next = next.next;
+			} else {
+				mem.add(curr.data);
 				curr = curr.next;
-         }
+			}
 		}
-      mem.add(curr.data);
+		mem.add(curr.data);
 		if(mem.contains(curr.next.data))
-	      curr.next = null;
+			curr.next = null;
 	}
 }
