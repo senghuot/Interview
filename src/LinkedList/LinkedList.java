@@ -53,7 +53,7 @@ public class LinkedList {
 	public void removeDuplicate() {
 		// too short
 		if(root == null || root.next == null)
-         return;
+			return;
       
 		Node curr = root;
 		Node next;
