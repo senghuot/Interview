@@ -66,4 +66,9 @@ public class Main {
 		return true;
 	}
 	
+	// binary search
+	public static boolean binarySearch(int[] arr) {
+		return -1;
+	}
+	
 }
