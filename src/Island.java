@@ -6,7 +6,7 @@ public class Island {
 		
 		System.out.println(getIslands(pic));
 	}
-	
+
 	public static int getIslands(int[][] map) {
 		// keeping track of the count 
 		int count = 0;

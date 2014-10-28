@@ -8,6 +8,22 @@ public class AvlTree {
 		root = null;
 	}
 	
+	public AvlTree(int[] arr) {
+		root = buildAvlTree(arr, 0, arr.length - 1);
+	}
+	
+	public AvlNode buildAvlTree(int[] arr, int low, int high) {
+		if(low > high)
+			return null;
+		
+		int mid = (high - low) / 2 + low;
+		AvlNode root = new AvlNode(arr[mid]);
+		root.left = buildAvlTree(arr, low, mid - 1);
+		root.right = buildAvlTree(arr, mid + 1, high);
+		
+		return root;
+	}
+
 	public void verifyAVL() {
 		System.out.println("We're good to go.");
 	}
@@ -19,13 +35,11 @@ public class AvlTree {
 	private AvlNode add(AvlNode root, int key) {
 		if(root == null)
 			return new AvlNode(key);
-		if(key <= root.key) {
-			
+		
+		if(key <= root.key)
 			root.left = add(root.left, key);
-		} else {
-			
+		else
 			root.right = add(root.right, key);
-		}
 		
 		return root;
 	}
@@ -73,15 +87,4 @@ public class AvlTree {
 		verifyAVLTree(root.left, min, root.key);
 		verifyAVLTree(root.right, root.key, max);
 	}
-	
-	
-	
-//	private int verify() {
-//		if(root == null)
-//			return 0;
-//		
-//		if(root.left == null)
-//	}
-	
-	
 }
