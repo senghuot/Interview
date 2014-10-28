@@ -1,5 +1,9 @@
-
 public class Island {
+	
+	public static void main(String[] args) {
+		
+	}
+	
 	private int[][] Island;
 	
 	public static int getBlackPixels(int[][] map) {
