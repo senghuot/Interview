@@ -2,11 +2,10 @@ public class Main {
 	
 	// Starting out easy
 	public static void main(String[] args) {
-		String w1 = "Haealo";
-		String w2 = "aealoHadf";
-		System.out.println(permutation(w1, w2));
+		int[] arr = {1,3,4,5,6,7,8,9,10};
+		System.out.println(binarySearch(arr, 1));
 	}
-	
+
 	// Return the smallest number in an integer array
 	public static int getSmallest(int[] array) {
 		if (array.length == 0)
@@ -64,6 +63,25 @@ public class Main {
 		}
 
 		return true;
+	}
+	
+	// binary search
+	public static boolean binarySearch(int[] arr, int x) {
+		int low = 0;
+		int high = arr.length - 1;
+		while (low <= high) {
+			int mid = (high - low) / 2 + low;
+			if (arr[mid] > x) {
+				// move the low
+				high = mid -1;
+			} else if (arr[mid] < x) {
+				// move the high
+				low = mid + 1;
+			} else {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 }
