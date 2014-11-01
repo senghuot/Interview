@@ -8,6 +8,6 @@ public class Main {
 	
 	// fast way to multiply by 4.
 	public static int multiply4(int num) {
-		return num * 4;
+		return num << 2;
 	}
 }
