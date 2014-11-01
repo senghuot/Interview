@@ -8,7 +8,7 @@ public class Main {
 	
 	// fast way to multiply by 4.
 	public static int multiply4(int num) {
-		return num << 2;
+		return num << 22;
 	}
 	
 }
