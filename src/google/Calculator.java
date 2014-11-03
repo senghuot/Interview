@@ -12,6 +12,17 @@ public class Calculator {
 		index = 0;
 	}
 	
+	public void set(String expresstion) {
+		reset();
+		this.expression = expression;
+	}
+	
+	public void reset() {
+		expression = "";
+		index = 0;
+	}
+	
+	
 	public int read() {
 		if (index == expression.length())
 			return 1;
