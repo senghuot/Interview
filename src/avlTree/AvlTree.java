@@ -77,14 +77,41 @@ public class AvlTree {
 		if(root.right != null)
 			right = root.right.height;
 		
-		System.out.println(left);
-		System.out.println(root.height);
-		System.out.println(right);
-		
 		assert(root.height == 1 + Math.max(left, right));
 		assert(Math.abs(left - right) <= 1);
 		
 		verifyAVLTree(root.left, min, root.key);
 		verifyAVLTree(root.right, root.key, max);
 	}
+   
+   
+   // check if the tree is balanced. balanced tree define to have left and right
+   // subtree height differ by at most 1 
+   public boolean balance() {
+      return balanceHelper(root);
+   }
+   
+   // balance helper method
+   private boolean balanceHelper(AvlNode root) {
+   
+      if (root == null)
+         return true;
+         
+      int diff = heightHelper(root.left) - heightHelper(root.right);
+      if (Math.abs(diff) > 1)
+         return false;
+         
+      return balanceHelper(root.left) && balanceHelper(root.right);
+   }
+   
+   // helper method to find the height.
+   private int heightHelper(AvlNode root) {
+      if(root == null)
+         return 0;
+         
+      int left = 1 + heightHelper(root.left);
+      int right = 1 + heightHelper(root.right);
+      return Math.max(left, right);
+           
+   }
 }
