@@ -1,10 +1,46 @@
+import java.util.*;
+
 public class Main {
 	
 	// Starting out easy
 	public static void main(String[] args) {
-		int[] arr = {1,3,4,5,6,7,8,9,10};
-		System.out.println(binarySearch(arr, 1));
+		System.out.println(permutation("a"));
 	}
+
+   // getting string permutation
+   public static List<String> permutation(String str) {
+      
+      // base case 0
+      if (str == null)
+         return null;
+      
+      List<String> perm = new ArrayList<String>();   
+      // base case 1
+      if (str.length() == 0) {
+         perm.add("");
+         return perm;
+      }
+      
+      char first = str.charAt(0);
+      String remainder = str.substring(1);
+      List<String> words = permutation(remainder);
+      for (String word: words) {
+         for (int j = 0; j <= word.length(); j++) {
+            String s = insertCharAt(word, first, j);
+            perm.add(s);
+         }
+      }
+      
+      return perm;
+   }
+   
+   // insert char in the ith position
+   private static String insertCharAt(String word, char c, int i) {
+      String start = word.substring(0, i);
+      String end = word.substring(i);
+      return start + c + end;
+   }
+
 
 	// Return the smallest number in an integer array
 	public static int getSmallest(int[] array) {
