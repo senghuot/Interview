@@ -1,12 +1,13 @@
 package avlTree;
 
+import java.util.*;
+
 public class Main {
 	
 	public static void main(String[] args) {
-      int[] data = {5, 10, 20, 30, 35, 40 , 50};
+      int[] data = {5, 10, 20, 30, 35, 40, 45, 50, 55};
 		AvlTree t = new AvlTree(data);
-      t.root.right = null;
-      System.out.print(t.balance());
+      List<LinkedList<Integer>> r = t.createLevelList();
       
 	}
 	

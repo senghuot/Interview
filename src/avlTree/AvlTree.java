@@ -1,5 +1,7 @@
 package avlTree;
 
+import java.util.*;
+
 public class AvlTree {
 
 	AvlNode root;
@@ -111,7 +113,30 @@ public class AvlTree {
          
       int left = 1 + heightHelper(root.left);
       int right = 1 + heightHelper(root.right);
-      return Math.max(left, right);
-           
+      return Math.max(left, right);    
    }
+   
+   public List<LinkedList<Integer>> createLevelList() {
+        List<LinkedList<Integer>> res = new ArrayList<LinkedList<Integer>>();
+        createLevelList(root, res, 0);
+        return res;
+   }
+   
+   private void createLevelList(AvlNode root, List<LinkedList<Integer>> res, int level) {
+      if(root == null)
+         return;
+         
+      LinkedList<Integer> l = null;
+      if (res.size() == level) {
+         l = new LinkedList<Integer>();
+         res.add(l); 
+      } else
+         l = res.get(level);
+      
+      // now its safe to insert
+      l.add(root.key);
+      createLevelList(root.left, res, level + 1);
+      createLevelList(root.right, res, level + 1);
+   }
+   
 }
