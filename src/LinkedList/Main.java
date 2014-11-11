@@ -1,19 +1,18 @@
 package LinkedList;
 
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LinkedList ll = new LinkedList();
-      for (int i=0; i<10000; i++) {
+      for (int i=0; i<3; i++) {
          ll.add(i);
       }
-
-      long startTime = System.currentTimeMillis();
-      ll.reverse();
-      System.out.println((System.currentTimeMillis() - startTime));
-      startTime = System.currentTimeMillis();
-      ll.reverse2();
-      System.out.println((System.currentTimeMillis() - startTime));
+      
+      Map<String, Integer> m = new HashMap<String, Integer>();
+      
+      
    }
 }
