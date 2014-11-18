@@ -6,6 +6,8 @@ public class Main {
 	    System.out.println("921");
 	}
 
+	// TODO: spends lots of time with this
+	
 	public boolean isNum(String string) { 
 		 // base case where string is null
 		 if (string == null)
