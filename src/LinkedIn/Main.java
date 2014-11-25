@@ -3,11 +3,14 @@ package LinkedIn;
 public class Main {
 
 	public static void main(String[] args) {
-	    System.out.println("921");
+	    int[] a = {1, 5, 14, 15};
+	    int[] b = {3, 13};
+	    
+	    System.out.print(smallDiff(a, b));
 	}
 
-	// TODO: spends lots of time with this
-	
+	// return if the given string is a number
+	// another way of doing this is by using regex
 	public boolean isNum(String string) { 
 		 // base case where string is null
 		 if (string == null)
@@ -39,6 +42,24 @@ public class Main {
 		         return false;
 		 }
 	 return true;
+	}
+	
+	// the array is sorted in ascending order
+	public static int smallDiff(int[] a, int[] b) {
+		int res = Integer.MAX_VALUE;
+		int ap = 0; // array a pointer
+		int bp = 0; // array b pointer
+		
+		while (ap < a.length && bp < b.length) {
+			int diff = Math.abs(a[ap] - b[bp]);
+			res = Math.min(res, diff);
+			if (a[ap] < b[bp])
+				ap++;
+			else
+				bp++;
+		}
+		
+		return res;
 	}
 }
 
