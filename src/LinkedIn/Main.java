@@ -3,10 +3,16 @@ package LinkedIn;
 public class Main {
 
 	public static void main(String[] args) {
-	    int[] a = {1, 5, 14, 15};
-	    int[] b = {3, 13};
-	    
-	    System.out.print(smallDiff(a, b));
+		Tree t = new Tree();
+		t.add(10);
+		t.add(5);
+		t.add(15);
+		t.add(12);
+		t.add(17);
+		t.add(3);
+		t.add(7);
+		
+		t.printLevel();
 	}
 
 	// return if the given string is a number
