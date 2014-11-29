@@ -1,20 +1,32 @@
 package LinkedIn;
 
+import java.util.*;
+
 public class Main {
 
 	public static void main(String[] args) {
-		Tree t = new Tree();
-		t.add(10);
-		t.add(5);
-		t.add(15);
-		t.add(12);
-		t.add(17);
-		t.add(3);
-		t.add(7);
-		
-		t.printLevel();
+		int[] a = {10, 21, 22, 100, 101, 200, 300};
+		System.out.println(countTriangle(a));
 	}
 
+	public static int countTriangle(int[] a) {
+		int res = 0;
+		
+		Arrays.sort(a);
+		int j;
+		for (int i = 0; i < a.length - 2; i++) {
+			
+			int x = i + 2;
+			for (j = i + 1; j < a.length; j++) {
+				while (x < a.length && a[i] + a[j] > a[x])
+					x++;
+				res += x - j - 1;
+			}
+		}
+		
+		return res;
+	} 
+	
 	// return if the given string is a number
 	// another way of doing this is by using regex
 	public boolean isNum(String string) { 
