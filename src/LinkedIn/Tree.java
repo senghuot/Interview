@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Tree {
 	
-	private Node root;
+	Node root;
 	
 	public static class Node {
 		int data;
@@ -18,6 +18,18 @@ public class Tree {
 	
 	public Tree() {
 		root = null;
+	}
+	
+	public boolean checkBalance() {
+		return checkBalance(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+	private boolean checkBalance(Node root, int min, int max) {
+		if (root == null)
+			return true;
+		if (root.data > max || root.data < min)
+			return false;
+			
+		return checkBalance(root.left, min, root.data) && checkBalance(root.right, root.data, max);
 	}
 	
 	public void add(int n) {

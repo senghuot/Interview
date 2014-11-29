@@ -5,8 +5,12 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		int[] a = {10, 21, 22, 100, 101, 200, 300};
-		System.out.println(countTriangle(a));
+		Tree t = new Tree();
+		t.add(10);
+		t.add(5);
+		t.add(15);
+		t.root.left.data = 15;
+		System.out.println(t.checkBalance());
 	}
 
 	public static int countTriangle(int[] a) {
