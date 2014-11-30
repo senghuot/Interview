@@ -5,12 +5,8 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-		Tree t = new Tree();
-		t.add(10);
-		t.add(5);
-		t.add(15);
-		t.root.left.data = 15;
-		System.out.println(t.checkBalance());
+      int[] a = {1,2,3};
+		Tree t = new Tree(a);
 	}
 
 	public static int countTriangle(int[] a) {

@@ -19,6 +19,24 @@ public class Tree {
 	public Tree() {
 		root = null;
 	}
+   
+   public Tree(int[] a) {
+      root = buildTree(a, 0, a.length - 1);
+   }
+   
+   
+   public Node buildTree(int[] a, int lo, int hi) {
+      if (hi < lo)
+         return null;
+      
+      int mid = (lo + hi) / 2;
+      Node res = new Node(a[mid]);
+      res.left = buildTree(a, lo, mid - 1);
+      res.right = buildTree(a, mid + 1, hi);
+      
+      return res;
+   }
+
 	
 	public boolean checkBalance() {
 		return checkBalance(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
