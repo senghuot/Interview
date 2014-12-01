@@ -1,3 +1,5 @@
+package LinkedIn;
+
 // BinaryHeap class
 //
 // CONSTRUCTION: with optional capacity (that defaults to 100)
@@ -64,7 +66,7 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>>
         if( currentSize == array.length - 1 )
             enlargeArray( array.length * 2 + 1 );
 
-            // Percolate up
+        // Percolate up
         int hole = ++currentSize;
         for( array[ 0 ] = x; x.compareTo( array[ hole / 2 ] ) < 0; hole /= 2 )
             array[ hole ] = array[ hole / 2 ];
@@ -162,11 +164,24 @@ public class BinaryHeap<AnyType extends Comparable<? super AnyType>>
     public static void main( String [ ] args )
     {
         int numItems = 10000;
-        BinaryHeap<Integer> h = new BinaryHeap<>( );
+        BinaryHeap<Integer> h = new BinaryHeap<>();
         h.insert(10);
         h.insert(12);
         h.insert(1);
         h.insert(14);
         h.insert(6);
+        h.insert(5);
+        h.insert(8);
+        h.insert(15);
+        h.insert(3);
+        h.insert(9);
+        h.insert(7);
+        h.insert(4);
+        h.insert(11);
+        h.insert(13);
+        h.insert(2);
+        h.deleteMin();
+        h.deleteMin();
+        h.deleteMin();
     }
 }
