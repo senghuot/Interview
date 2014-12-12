@@ -5,6 +5,4 @@ This is where I includes all solutions to technical interview questions. All que
 - Facebook
 - Twitter
 - eBay
-
-Hhjdkd
-
+- Microsoft
