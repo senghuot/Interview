@@ -5,9 +5,25 @@ import java.util.*;
 public class Main {
 
 	public static void main(String[] args) {
-      int[] a = {1,2,3};
-		Tree t = new Tree(a);
+      boolean t = true;
+      char xsdf = 'c';
+      print(xsdf);
 	}
+
+   public static <T> void print(T input) {
+      System.out.println(input);
+   }
+   
+   public static <T extends Comparable<T>> T max(T a, T b, T c) {
+      T tmp = a;
+      if (b.compareTo(a) > 1)
+         tmp = b;
+         
+      if (c.compareTo(tmp) > 1)
+         tmp = c;
+         
+      return tmp;
+   }
 
 	public static int countTriangle(int[] a) {
 		int res = 0;
