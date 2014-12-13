@@ -48,8 +48,11 @@ public class Perm {
       List<List<Integer>> tmp = subSet(s);
       
       for (List<Integer> l: tmp) {
+    	 // to copy
          List<Integer> a = new ArrayList<Integer>(l);
          res.add(a);
+         // ......
+         
          l.add(first);
          res.add(l);  
       }
