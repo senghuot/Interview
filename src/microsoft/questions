@@ -3,6 +3,7 @@ First Round:
 	
 Final Round:
 	1. return the size and the largest element in an integer array
-	2. find the common nearest ancester of two nodes in a tree
+	2. find the common nearest ancestor of two nodes in a tree. This tree is a bit different than a regular tree where each node has a
+		pointer to its parent.
 	3. given a schedule, let the user make a rectangle selections to return of timeline boxes then return: Available, Conflict, Not available
 	4. design problem to represent food entry in restaurant
