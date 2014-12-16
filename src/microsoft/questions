@@ -3,7 +3,16 @@ First Round:
 	
 Final Round:
 	1. return the size and the largest element in an integer array
+	
 	2. find the common nearest ancestor of two nodes in a tree. This tree is a bit different than a regular tree where each node has a
 		pointer to its parent.
-	3. given a schedule, let the user make a rectangle selections to return of timeline boxes then return: Available, Conflict, Not available
+		
+	3. given a schedule, let the user make a rectangle selections to return of timeline boxes then return: 
+		Available, Conflict, Not available. the selection schedule forms a rectangle [we can run nested for loop].
+		* I think the interview is looking for a testing ability because the answer is too straight forward. The full class can be think as
+		an object where the big schedule represents all the employee schedule. I can't really write out the code here cause the interview gave me
+		helper method. I think the best way to tackle this problem is to ask LOTS of questions and write out really good edge cases. some examples
+		of edge cases are what if the coordinate of the given schedule is out of bound. The bigger schedule is null...etc test out happy cases as well.
+	
 	4. design problem to represent food entry in restaurant
+		 * This is an open ended questions about design pattern.
