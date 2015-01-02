@@ -1,4 +1,4 @@
-This is where I includes all solutions to technical interview questions. All questions are mostly coming from "Cracking the Coding Interview". I will create folders with technical questions from various companies from my personal experience.
+This is where I practice technical interview questions. All questions are mostly coming from "Cracking the Coding Interview". I will create folders with technical questions for various companies.
 
 - Amazon
 - Google
