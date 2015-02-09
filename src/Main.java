@@ -2,16 +2,78 @@ public class Main {
 	
 	// Starting out easy
 	public static void main(String[] args) {
-     System.out.println(countWay(10));
+     char[][] rec = {{'a', 'b', 'c', 'd'}, {'e','f','g','h'}, {'l','m','n','o'}, {'k','x','y','z'}};
+     System.out.println(printArray(rec));
+     rotate90(rec);
+     System.out.println(printArray(rec));
 	}
+	
+	public static String printArray(char[][] rec) {
+		String res = "";
+		for (int i=0; i<rec.length; i++) {
+			for (int j=0; j<rec.length; j++) {
+				res += " " + rec[i][j];
+			}
+			res += "\n";
+		}
+		
+		return res;
+	}
+	
+	public static void rotate90(char[][] rec) {
+		int n = rec.length;
+		for (int i=0; i<n/2; i++) {
+			char[] cache = new char[n-i-i];
+			
+			// Cache the one array firrst
+			int counter = 0;
+			for (int j=i; j < n-i; j++)
+				cache[counter++] = rec[i][j];
+			
+			// Replace right
+         counter = 0;
+			for (int j=0; j<cache.length; j++) {
+				char tmp = rec[i+j][n-1-i];
+				rec[i+j][n-1-i] = cache[counter];
+				cache[counter++] = tmp;
+			}
+			
+			// Replace bottom
+         counter = cache.length - 1;
+         char last = cache[counter];
+			for (int j=i; j<n-i; j++) {
+				char tmp = rec[n-1-i][j];
+            rec[n-1-i][j] = cache[counter];
+            cache[counter--] = tmp;
+			}
+         cache[++counter] = last;
+         
+			// Replace left
+         counter = cache.length - 1;
+         last = cache[counter];
+ 			for (int j=i; j<n-i; j++) {
+ 				char tmp = rec[j][i];
+             rec[j][i] = cache[counter];
+             cache[counter--] = tmp;
+ 			}
+         cache[++counter] = last;
+         
+         // Replace top
+         counter = cache.length - 1;
+         for (int j=i; j<n-i; j++) {
+            rec[i][n-1-j] = cache[counter--];
+         }
+		}
+	}
+	
    
-   public static int countWay(int n) {
-   	if (n == 0)
-   		return 1;
-   	if (n < 0)
-   		return 0;
-   	return countWay(n - 1) + countWay(n - 2)  + countWay(n -3);
-   }
+	public static int countWay(int n) {
+		if (n == 0)
+			return 1;
+   	 	if (n < 0)
+   	 		return 0;
+   	 	return countWay(n - 1) + countWay(n - 2)  + countWay(n -3);
+    }
  
 
 	// Return the smallest number in an integer array
